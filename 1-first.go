@@ -25,6 +25,16 @@ var i, j int = 1, 2
 
 const Pi = 3.14
 
+// variadic function
+func variadicFunctionSum(nums ...int)  {
+	fmt.Print(nums, " ")
+	total := 0
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println(total)
+}
+
 
 func main() {
 	// 1. importing and using libs
@@ -65,4 +75,11 @@ func main() {
 
 	const Truth = true
 	fmt.Println("Go rules?", Truth)
+
+	// variadic function
+	variadicFunctionSum(1, 2)
+	variadicFunctionSum(1, 2, 3)
+
+	nums := []int{1, 2, 3, 4}
+	variadicFunctionSum(nums...)
 }
